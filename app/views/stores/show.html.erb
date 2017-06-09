@@ -1,0 +1,26 @@
+
+<h1> <%= link_to "View Stores", stores_path %> </h1>
+
+
+<br>
+
+<h2>Store</h2>
+<h3> Name: <%= @store.name %> </h3>
+<h3> Location: <%= @store.location %> </h3>
+
+
+<br>
+
+<h2>Products</h2>
+
+<ul>
+<% @store.products.each do |product| %>
+
+<li>
+
+<h3> <%= link_to product.name, store_product_path(product)%> </h3>
+
+</li>
+
+<% end %>
+</ul>

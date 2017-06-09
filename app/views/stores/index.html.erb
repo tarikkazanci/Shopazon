@@ -1,0 +1,16 @@
+<h1> link_to "Add Store", new_store_path</h1>
+
+<h1>Stores</h1>
+
+
+<ul>
+<% @stores.each do |store| %>
+
+<li>
+
+<h3> <%= link_to store.name, store_path(store)%> </h3>
+
+</li>
+
+<% end %>
+</ul>

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-get '/' => "stores#home"
+get '/' => "welcome#home"
 
 resources :stores do
   resources :products
   end
+
+  resources :products
 end

@@ -1,8 +1,5 @@
 class StoresController < ApplicationController
 
-def home
-
-end
 
 def index
   @stores = Store.all

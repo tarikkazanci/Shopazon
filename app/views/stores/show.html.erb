@@ -1,6 +1,5 @@
 
 
-
 <h1> <%= link_to "View Stores", stores_path %> </h1>
 
 <h1> <%= link_to "Edit Store", edit_store_path %> </h1>
@@ -8,23 +7,24 @@
 
 <br>
 
-<h2>Store</h2>
-<h3> Name: <%= @store.name %> </h3>
-<h3> Location: <%= @store.location %> </h3>
+<h2> Name: <%= @store.name %> </h2>
+<h2> Location: <%= @store.location %> </h2>
 
 
 <br>
 
-<h2>Products</h2>
+<h1>Products</h1>
 
 <ul>
 <% @store.products.each do |product| %>
 
 <li>
 
-<h3> <%= link_to product.name, store_product_path(@store,product)%> </h3>
+<h2> <%= link_to product.name, store_product_path(@store,product)%> </h2>
 
 </li>
 
 <% end %>
 </ul>
+
+<h1> <%= link_to "Add Product", new_store_product_path(@store) %> </h1>

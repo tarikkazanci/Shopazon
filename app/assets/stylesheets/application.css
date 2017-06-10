@@ -17,4 +17,25 @@
 
 body {
   text-align: center;
+  /*font-family: "Irish Grover", Papyrus, fantasy, cursive;*/
 }
+
+#welcome-header {
+  font-size: 45px;
+}
+
+nav {
+  padding: 15px;
+  background-color: lemonchiffon;
+  border-radius: 40px;
+}
+
+.flash {
+  /*border: 1px solid black;*/
+  padding: 1em;
+  background-color: lemonchiffon;
+  font-size: 20px;
+}
+
+.notice { color: black; }
+.alert  { color: red;  }

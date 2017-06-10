@@ -14,6 +14,8 @@ class ProductsController < ApplicationController
     @store = Store.find(params[:store_id])
     @product = @store.products.create(product_params)
 
+    flash[:notice] = "#{@product.name} was added to the products"
+
     redirect_to store_product_path(@store, @product)
   end
 
@@ -30,8 +32,9 @@ class ProductsController < ApplicationController
   def update
     @store = Store.find(params[:store_id])
     @product = @store.products.find(params[:id])
-
     @product.update(product_params)
+
+    flash[:notice] = "Product was updated"
 
     redirect_to store_product_path
   end
@@ -40,6 +43,8 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
+
+    flash[:notice] = "Product was deleted"
 
     redirect_to store_path(@product.store)
   end

@@ -16,6 +16,8 @@ end
 def create
   @store = Store.create(store_params)
 
+  flash[:notice] = "#{@store.name} was added to the stores"
+
   redirect_to store_path(@store)
 end
 
@@ -27,6 +29,8 @@ def update
   @store = Store.find(params[:id])
   @store.update(store_params)
 
+  flash[:notice] = "Store was updated"
+
   redirect_to store_path(@store)
 end
 
@@ -34,7 +38,9 @@ def destroy
   @store = Store.find(params[:id])
   @store.destroy
 
-  redirect_to stores_path
+  flash[:notice] = "Store was deleted"
+
+  redirect_to stores_path(@store)
 end
 
 

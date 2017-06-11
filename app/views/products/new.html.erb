@@ -1,4 +1,11 @@
 
+<!-- !!! -->
+<% @product.errors.full_messages.each do |message| %>
+  <p><%= message %></p>
+<% end %>
+
+
+
 <h2>New Product</h2>
 
 <%= form_for [@store, @product] do |f| %>

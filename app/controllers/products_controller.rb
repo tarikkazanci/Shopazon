@@ -1,5 +1,11 @@
 class ProductsController < ApplicationController
 
+  before_action :set_session
+
+  def set_session
+    session[:product_history] ||= []
+  end
+
   def index
    @products = Product.all
   end
@@ -12,17 +18,23 @@ class ProductsController < ApplicationController
 
   def create
     @store = Store.find(params[:store_id])
-    @product = @store.products.create(product_params)
+    @product = @store.products.new(product_params)
 
-    flash[:notice] = "#{@product.name} was added to the products"
+    if @product.save
+      flash[:notice] = "#{@product.name} was added to the products"
+      redirect_to store_product_path(@store, @product)
 
-    redirect_to store_product_path(@store, @product)
+    else
+      redirect_to new_store_product_path
+    end
   end
 
 
   def show
     @product = Product.find(params[:id])
+    session[:product_history].push(@product.name)
   end
+
 
   def edit
     @store = Store.find(params[:store_id])

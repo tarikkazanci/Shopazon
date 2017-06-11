@@ -1,5 +1,11 @@
 class StoresController < ApplicationController
 
+before_action :set_session
+
+def set_session
+  session[:store_history] ||= []
+end
+
 
 def index
   @stores = Store.all
@@ -7,6 +13,8 @@ end
 
 def show
   @store = Store.find(params[:id])
+
+  session[:store_history].push(@store.name)
 end
 
 def new
@@ -14,11 +22,15 @@ def new
 end
 
 def create
-  @store = Store.create(store_params)
+  @store = Store.new(store_params)
 
-  flash[:notice] = "#{@store.name} was added to the stores"
+   if @store.save
+    flash[:notice] = "#{@store.name} was added to the stores"
+    redirect_to store_path(@store)
 
-  redirect_to store_path(@store)
+   else
+     redirect_to new_store_path(@store)
+   end
 end
 
 def edit

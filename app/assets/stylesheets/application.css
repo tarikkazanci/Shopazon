@@ -39,3 +39,8 @@ nav {
 
 .notice { color: black; }
 .alert  { color: red;  }
+
+img {
+  border-radius: 30%;
+  height: 400px;
+}

@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
     belongs_to :store
-
     validates :name, :price, {presence: true}
+
+    belongs_to :user
 
     validate :not_iphone
     def not_iphone

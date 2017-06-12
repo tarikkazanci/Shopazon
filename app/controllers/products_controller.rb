@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_session
 
   def set_session
@@ -18,12 +19,13 @@ class ProductsController < ApplicationController
 
   def create
     @store = Store.find(params[:store_id])
-    @product = @store.products.new(product_params)
+
+    # @product = current_user.stores.products.new(product_params)
+    @product = @store.products.create!(product_params.merge(user: current_user))
 
     if @product.save
       flash[:notice] = "#{@product.name} was added to the products"
       redirect_to store_product_path(@store, @product)
-
     else
       redirect_to new_store_product_path
     end
@@ -44,20 +46,25 @@ class ProductsController < ApplicationController
   def update
     @store = Store.find(params[:store_id])
     @product = @store.products.find(params[:id])
-    @product.update(product_params)
 
-    flash[:notice] = "Product was updated"
-
-    redirect_to store_product_path
-  end
-
+    if @product.user  == current_user
+       @product.update(product_params)
+       flash[:notice] = "Product was updated"
+    else
+       flash[:alert] = "Only the owner of the store can update this product"
+    end
+      redirect_to store_product_path
+end
 
   def destroy
     @product = Product.find(params[:id])
-    @product.destroy
 
-    flash[:notice] = "Product was deleted"
-
+    if @product.user == current_user
+      @product.destroy
+      flash[:notice] = "The product was deleted"
+    else
+      flash[:alert] = "Only the owner of the store can delete this product"
+    end
     redirect_to store_path(@product.store)
   end
 

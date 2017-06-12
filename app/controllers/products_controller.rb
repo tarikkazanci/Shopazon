@@ -15,20 +15,30 @@ class ProductsController < ApplicationController
   def new
     @store = Store.find(params[:store_id])
     @product = @store.products.new
+
+    # if @product.user != current_user
+    #   flash[:alert] = "Only the owner of the store can add a product"
+    # end
   end
 
   def create
     @store = Store.find(params[:store_id])
 
     # @product = current_user.stores.products.new(product_params)
-    @product = @store.products.create!(product_params.merge(user: current_user))
+    @product = @store.products.new(product_params.merge(user: current_user))
 
-    if @product.save
+    if @store.user == current_user
+      if @product.save
       flash[:notice] = "#{@product.name} was added to the products"
       redirect_to store_product_path(@store, @product)
-    else
+      else
       redirect_to new_store_product_path
     end
+    else
+      flash[:alert] = "Only the owner of the store can add a product"
+      redirect_to new_store_product_path
+    end
+
   end
 
 

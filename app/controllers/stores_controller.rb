@@ -58,6 +58,7 @@ def update
   redirect_to store_path(@store)
 end
 
+
 # delete
 def destroy
   @store = Store.find(params[:id])

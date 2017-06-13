@@ -10,23 +10,26 @@
 
   <body>
 
-<nav>
-    <h1> <%= link_to "Home", '/' %> </h1>
-    <h1> <%= link_to "View Stores", stores_path %> </h1>
-    <h1> <%= link_to "View Products", products_path %> </h1>
-</nav>
+    <nav>
+        <h1> <%= link_to "Home", '/' %> </h1>
+        <h1> <%= link_to "View Stores", stores_path %> </h1>
+        <h1> <%= link_to "View Products", products_path %> </h1>
+        <h1> <%= link_to "Orders", orders_path %> </h1>
+        <h1> <%= link_to "Create Order", new_order_path %> </h1>
+    </nav>
+
+<% if !current_user %>
+  <h2><%= link_to "Sign Up", new_user_registration_path %></h2>
+  <h2><%= link_to "Sign In", new_user_session_path %></h2>
+<% else %>
+  <h2><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></h2>
+    <h2><%= current_user.email %></h2>
+<% end %>
+
 
 <!-- Flash Messages -->
 <% flash.each do |type, message| %>
   <p class="flash <%= type %>"><%= message %></p>
-<% end %>
-
-<% if !current_user %>
-  <%= link_to "Sign Up", new_user_registration_path %>
-  <%= link_to "Sign In", new_user_session_path %>
-<% else %>
-  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-    <%= current_user.email %>
 <% end %>
 
     <%= yield %>

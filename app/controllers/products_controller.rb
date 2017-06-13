@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index, :show]
+  # before_action :authenticate_user!, except: [:index, :show]
   before_action :set_session
 
   def set_session
@@ -9,12 +9,14 @@ class ProductsController < ApplicationController
 
   def index
    @products = Product.all
-  end
 
+  end
 
   def new
     @store = Store.find(params[:store_id])
     @product = @store.products.new
+
+    # prevent non-user's to enter an add product form
 
     # if @product.user != current_user
     #   flash[:alert] = "Only the owner of the store can add a product"
@@ -24,7 +26,6 @@ class ProductsController < ApplicationController
   def create
     @store = Store.find(params[:store_id])
 
-    # @product = current_user.stores.products.new(product_params)
     @product = @store.products.new(product_params.merge(user: current_user))
 
     if @store.user == current_user

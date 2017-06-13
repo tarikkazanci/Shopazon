@@ -8,12 +8,11 @@
 
 Store.destroy_all
 Product.destroy_all
+Order.destroy_all
 
 tarik_store = Store.create!(name: "Tarik's Store", location: "San Fransisco")
 james_store = Store.create!(name: "James's Store", location: "Washington DC")
 tim_store = Store.create!(name: "Tim's Store", location: "Maryland")
-
-
 
 # Tarik's Store's Products
 iphone7_case = Product.create!(name: "iPhone 7 Case Flip Armor [Jet Black]", price: 18.99, category: "Electronics", img_url: "http://ecx.images-amazon.com/images/I/5188yiXi4WL.jpg", store: tarik_store)
@@ -25,3 +24,8 @@ div_tshirt = Product.create!(name: "Div Web Developer Men's Geek T-Shirt", price
 
 # Tim's Store's Products
 owl_hat = Product.create!(name: "Goorin Brothers The Owl Trucker Hat", price: 29.99, category: "Hats", img_url: "https://pimg.bucklecontent.com/images/products/391211012153/NVY/f?width=559", store: tim_store)
+
+
+new_user = User.create!(email: "tarikkazanci@hotmail.com", password: 123456)
+
+new_order = Order.create!(user: new_user, product: iphone7_case)

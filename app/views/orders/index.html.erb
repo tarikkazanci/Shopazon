@@ -1,0 +1,12 @@
+<br>
+
+<h1>Orders</h1>
+
+<% @orders.each do |order| %>
+
+<h3> Name: <%= order.product.name %></h3>
+<h3> By: <%= order.user.email %></h3>
+<h3> <%= order.created_at %></h3>
+<h3> <%= link_to "View Order", order_path(order) %> </h3>
+
+<% end %>

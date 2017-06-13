@@ -1,13 +1,20 @@
 class ApplicationController < ActionController::Base
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   protect_from_forgery with: :exception
 
-  rescue_from ActiveRecord::RecordNotFound, with: :couldnt_find_record
-
 # error handling
-  private
-  def couldnt_find_record
-    redirect_to '/', alert: "That record doesn't exist!"
-  end
+
+  # rescue_from ActiveRecord::RecordNotFound, with: :couldnt_find_record
+  # rescue_from NoMethodError, with: :no_method_error
+
+
+  # def no_method_error
+  #   redirect_to '/', notice: "You need to sign up or sign in"
+  # end
+
+  # private
+  # def couldnt_find_record
+  #   redirect_to '/', alert: "That record doesn't exist!"
+  # end
 end

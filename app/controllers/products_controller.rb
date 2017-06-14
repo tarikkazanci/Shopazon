@@ -15,12 +15,6 @@ class ProductsController < ApplicationController
   def new
     @store = Store.find(params[:store_id])
     @product = @store.products.new
-
-    # prevent non-user's to enter an add product form
-
-    # if @product.user != current_user
-    #   flash[:alert] = "Only the owner of the store can add a product"
-    # end
   end
 
   def create

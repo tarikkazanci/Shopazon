@@ -17,30 +17,55 @@
 
 body {
   text-align: center;
-  /*font-family: "Irish Grover", Papyrus, fantasy, cursive;*/
+}
+
+.container {
+  height: 1200px;
 }
 
 #welcome-header {
   font-size: 45px;
 }
 
+
 nav {
-  padding: 15px;
+  padding: 10px;
   background-color: lemonchiffon;
   border-radius: 40px;
 }
+nav li {
+  display: inline;
+  font-size: 25px;
+  padding: 10px;
+}
 
 .flash {
-  /*border: 1px solid black;*/
   padding: 1em;
   background-color: lemonchiffon;
   font-size: 20px;
 }
-
 .notice { color: black; }
 .alert  { color: red;  }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*a:hover {
+  background-color: white;
+}*/
 
 img {
   border-radius: 30%;
   height: 400px;
 }
+
+/*select#order_product_id {
+  height: 20px;
+}
+
+input {
+  font-size: 12px;
+  height: 22px;
+}*/

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
-
+  # before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
 
 # error handling
@@ -17,4 +17,11 @@ class ApplicationController < ActionController::Base
   # def couldnt_find_record
   #   redirect_to '/', alert: "That record doesn't exist!"
   # end
+
+  protected
+
+ def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :lastname])
+  end
+
 end

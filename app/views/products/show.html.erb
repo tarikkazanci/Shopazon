@@ -1,7 +1,5 @@
 
 
-<h1> <%= link_to "Back", store_path(@product.store) %> </h1>
-
 <% if @product.user == current_user %>
 <h1> <%= link_to "Edit Product", edit_store_product_path(@product.store)%> </h1>
 <% end %>
@@ -16,7 +14,7 @@
 <h2> <%= @product.name %> </h2>
 <h2> Category: <%= @product.category %> </h2>
 <h2> Price: $<%= @product.price %>  </h2>
-<h2> From: <%= @product.store.name %> </h2>
+<h2> From: <%= link_to @product.store.name, store_path(@product.store) %> </h2>
 <h2> <%= image_tag @product.img_url %> </h2>
 
 </div>

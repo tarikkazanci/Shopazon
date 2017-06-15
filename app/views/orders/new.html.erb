@@ -5,7 +5,7 @@
 <%= form_for @order do |f| %>
 
     <%= f.label :product_id %>
-    <%= f.select("product_id", Product.all.collect {|p| [ p.name + " - " + p.price.to_s, p.id ] }, { include_blank: true }) %>
+    <%= f.select("product_id", Product.all.collect {|p| [ p.name + " - " + " $ " + p.price.to_s, p.id ] }, { include_blank: true }) %>
 
   <%= f.submit %>
 

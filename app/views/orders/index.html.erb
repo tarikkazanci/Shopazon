@@ -9,7 +9,7 @@
 <h3> Name: <%= order.product.name %></h3>
   <%= image_tag order.product.img_url %>
 <h3> Created At: <%= order.created_at.strftime("%m/%d/%Y  %I:%M")  %></h3>
-<h3> <%= link_to "View Order Details", order_path(order) %> </h3>
+<h3> <%= link_to "View Order Details", product_path(order.product) %> </h3>
 <h3> <%= link_to "Edit Order", edit_order_path(order) %> </h3>
 
 <br>

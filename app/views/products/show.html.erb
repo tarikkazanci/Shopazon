@@ -9,8 +9,14 @@
 <br>
 
 
+<div class="product-show">
+
+
+
 <h2> <%= @product.name %> </h2>
 <h2> Category: <%= @product.category %> </h2>
-<h2> Price: <%= @product.price %> $ </h2>
+<h2> Price: $<%= @product.price %>  </h2>
 <h2> From: <%= @product.store.name %> </h2>
 <h2> <%= image_tag @product.img_url %> </h2>
+
+</div>

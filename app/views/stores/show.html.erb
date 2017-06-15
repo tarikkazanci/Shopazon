@@ -5,26 +5,31 @@
 <h1> <%= link_to "Edit Store", edit_store_path %> </h1>
 <% end %>
 
-<br>
+
+<div class="store-attr">
 
 <h2> Name: <%= @store.name %> </h2>
 <h2> Location: <%= @store.location %> </h2>
 
+</div>
+
 <br>
+
+
+<!-- Store's Products -->
 
 <h1>Products</h1>
 
-<ul>
+<!-- <ul class="stores-products"> -->
 <% @store.products.each do |product| %>
-
-<li>
-
+<ul class="stores-products">
 <h2> <%= link_to product.name, store_product_path(@store,product)%> </h2>
-
-</li>
-
-<% end %>
+<h2> <%= image_tag product.img_url  %> </h2>
 </ul>
+<% end %>
+<!-- </ul> -->
+
+
 
 <% if @store.user == current_user %>
 <h1> <%= link_to "Add Product", new_store_product_path(@store) %> </h1>

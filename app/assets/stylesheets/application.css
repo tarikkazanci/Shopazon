@@ -17,21 +17,16 @@
 
 body {
   text-align: center;
+  font-family: 'Atma', cursive;
+  /*background-color: red;*/
 }
 
-.container {
-  height: 1200px;
-}
-
-#welcome-header {
-  font-size: 45px;
-}
-
-
+/*Nav Bar*/
 nav {
   padding: 10px;
   background-color: lemonchiffon;
-  border-radius: 40px;
+  border: 1px;
+  border-radius: 50px;
 }
 nav li {
   display: inline;
@@ -39,6 +34,114 @@ nav li {
   padding: 10px;
 }
 
+
+/*Home Page's Background Image */
+.shop-image {
+  margin-top: 25px;
+  width: 1200px;
+  height: 550px;
+}
+
+/*User's first name, lastname, sign up, sign in, sign out section*/
+div.user li {
+  display: inline;
+  font-size: 20px;
+  padding: 3px;
+}
+
+/*Header*/
+#main-header {
+  font-size: 50px;
+  border-radius: 50px;
+  border: 1px;
+  background-color: lemonchiffon;
+}
+
+
+
+/*Store's index page (View Stores)*/
+ul.stores p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  font-size: 22px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: lemonchiffon;
+  height: 35px;
+}
+
+/*Store's show page */
+div.store-attr {
+  width: 100%;
+  font-size: 18px;
+  border: 1px;
+  border-radius: 50px;
+  background-color: lemonchiffon;
+  /*margin-left: auto;
+  margin-right: auto;*/
+}
+
+ul.stores-products {
+  border: 1px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lemonchiffon;
+  border-radius: 60px;
+}
+
+
+/*Product's index page (View Products)*/
+ul.products {
+  border: 1px solid black;
+  border-radius: 90px;
+  background-color: lemonchiffon;
+  margin: 35px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul.products p {
+  font-size: 20px;
+}
+
+/*Product show page */
+div.product-show {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  border: 1px;
+  border-radius: 90px;
+  background-color: lemonchiffon;
+}
+
+/*My Orders page */
+div.my-orders-page {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  height: 615px;
+  width: 40%;
+  border: 1px;
+  border-radius: 90px;
+  background-color: lemonchiffon;
+}
+
+/*User's show page */
+div.user-show-page {
+  margin-left: auto;
+  margin-right: auto;
+  height: 585px;
+  width: 50%;
+  border: 1px;
+  border-radius: 60px;
+  background-color: lemonchiffon;
+}
+
+
+/*Flash Messages*/
 .flash {
   padding: 1em;
   background-color: lemonchiffon;
@@ -47,25 +150,34 @@ nav li {
 .notice { color: black; }
 .alert  { color: red;  }
 
+
+/*Links */
 a {
   text-decoration: none;
   color: black;
 }
 
-/*a:hover {
-  background-color: white;
-}*/
-
+/*Images */
 img {
-  border-radius: 30%;
+  border-radius: 10%;
   height: 400px;
 }
 
-/*select#order_product_id {
-  height: 20px;
+#order_product_id {
+  font-size: 12px;
 }
 
-input {
-  font-size: 12px;
+/*Submit Buttons*/
+input[type=submit] {
+    width: 100px;
+    font-size: 150px;
+}
+
+label {
+  font-size: 20px;
+}
+
+input#store_name, input#store_img_url, input#store_location {
   height: 22px;
-}*/
+  font-size: 15px;
+}

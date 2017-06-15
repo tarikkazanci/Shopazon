@@ -4,19 +4,13 @@
 <h1> <%= link_to "Add Store", new_store_path %> </h1>
 
 
-<br>
-
 <h1>Stores</h1>
 
 
-<ul>
+<ul class="stores">
 <% @stores.each do |store| %>
 
-<li>
-
-<h2> <%= link_to store.name, store_path(store)%> </h2>
-
-</li>
+<p> <%= link_to store.name, store_path(store)%> </p>
 
 <% end %>
 </ul>

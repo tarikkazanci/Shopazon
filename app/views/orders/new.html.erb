@@ -5,6 +5,7 @@
 <%= form_for @order do |f| %>
 
     <%= f.label :product_id %>
+    <!-- Good use of select form helper -->
     <%= f.select("product_id", Product.all.collect {|p| [ p.name + " - " + " $ " + p.price.to_s, p.id ] }, { include_blank: true }) %>
 
   <%= f.submit %>

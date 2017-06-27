@@ -1,8 +1,10 @@
 
-<!-- !!! -->
+<!-- nice flash messages, although since you are rendering any existing flashes in your application layout perthaps they are not needed here -->
 <% @product.errors.full_messages.each do |message| %>
   <p><%= message %></p>
 <% end %>
+
+
 
 
 

@@ -6,11 +6,9 @@
 
 <h1>Stores</h1>
 
-
+<!-- I would make this ul a div or make the p tags inside <li>s -->
 <ul class="stores">
 <% @stores.each do |store| %>
-
-<p> <%= link_to store.name, store_path(store)%> </p>
-
+  <p> <%= link_to store.name, store_path(store)%> </p>
 <% end %>
 </ul>

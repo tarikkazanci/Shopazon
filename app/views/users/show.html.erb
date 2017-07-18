@@ -1,13 +1,12 @@
 <br>
-<h1>My Profile</h1>
+<h1>My Profile</h1> <!-- Could incorporate user's name into the header here -->
 
 <div class="user-show-page">
 
-
-<h2> Firstname: <%= @user.firstname %> </h2>
-<h2> Lastname: <%= @user.lastname %> </h2>
-<h2> Email: <%= @user.email %> </h2>
-  <%= image_tag @user.img_url %>
-
+  <!-- Could condense firstname and lastname to one line -->
+  <h2> Firstname: <%= @user.firstname %> </h2>
+  <h2> Lastname: <%= @user.lastname %> </h2>
+  <h2> Email: <%= @user.email %> </h2>
+  <%= image_tag @user.img_url # users don't seem to have img_url %> 
 
 </div>

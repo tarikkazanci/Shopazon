@@ -23,6 +23,7 @@
 <!-- <ul class="stores-products"> -->
 <% @store.products.each do |product| %>
 <ul class="stores-products">
+  <!-- I'd change the <ul> above to a <div> or change the <h2>s below to <li>s, which you could then style and enlarge to the size of h2's -->
 <h2> <%= link_to product.name, store_product_path(@store,product)%> </h2>
 <h2> <%= image_tag product.img_url  %> </h2>
 </ul>

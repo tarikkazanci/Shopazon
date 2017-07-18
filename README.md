@@ -1,3 +1,5 @@
+<!-- Add markdown headers -->
+<!-- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
 
 The project was built in HTML5, CSS and Ruby on Rails.
 
@@ -11,6 +13,8 @@ As a user;
 - I should be able to sign up, sign in and sign out
 - I should be able to see my profile
 
+
+<!-- I'd condense to these single line "CRUD for products & stores"  -->
 - I should be able to see all stores
 - I should be able to see all products   
 - I should be able to create a store

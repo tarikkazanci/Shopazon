@@ -1,0 +1,184 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+
+body {
+  text-align: center;
+  font-family: 'Atma', cursive;
+  /*background-color: red;*/
+}
+
+/*Nav Bar*/
+nav {
+  padding: 10px;
+  background-color: lemonchiffon;
+  border: 1px;
+  border-radius: 50px;
+}
+nav li {
+  display: inline;
+  font-size: 25px;
+  padding: 10px;
+}
+
+
+/*Home Page's Background Image */
+.shop-image {
+  margin-top: 25px;
+  width: 1200px;
+  height: 550px;
+}
+
+/*User's first name, lastname, sign up, sign in, sign out section*/
+div.user li {
+  display: inline;
+  font-size: 20px;
+  padding: 3px;
+}
+
+/*Header*/
+#main-header {
+  font-size: 50px;
+  border-radius: 50px;
+  border: 1px;
+  background-color: lemonchiffon;
+}
+
+
+
+/*Store's index page (View Stores)*/
+ul.stores p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  font-size: 22px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: lemonchiffon;
+  height: 35px;
+}
+
+/*Store's show page */
+div.store-attr {
+  width: 100%;
+  font-size: 18px;
+  border: 1px;
+  border-radius: 50px;
+  background-color: lemonchiffon;
+  /*margin-left: auto;
+  margin-right: auto;*/
+}
+
+ul.stores-products {
+  border: 1px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lemonchiffon;
+  border-radius: 60px;
+}
+
+
+/*Product's index page (View Products)*/
+ul.products {
+  border: 1px solid black;
+  border-radius: 90px;
+  background-color: lemonchiffon;
+  margin: 35px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul.products p {
+  font-size: 20px;
+}
+
+/*Product show page */
+div.product-show {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 1px;
+  border-radius: 90px;
+  background-color: lemonchiffon;
+}
+
+/*My Orders page */
+div.my-orders-page {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  height: 615px;
+  width: 40%;
+  border: 1px;
+  border-radius: 90px;
+  background-color: lemonchiffon;
+}
+
+/*User's show page */
+div.user-show-page {
+  margin-left: auto;
+  margin-right: auto;
+  height: 585px;
+  width: 50%;
+  border: 1px;
+  border-radius: 60px;
+  background-color: lemonchiffon;
+}
+
+
+/*Flash Messages*/
+.flash {
+  padding: 1em;
+  background-color: lemonchiffon;
+  font-size: 20px;
+}
+.notice { color: black; }
+.alert  { color: red;  }
+
+
+/*Links */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Images */
+img {
+  border-radius: 10%;
+  height: 400px;
+}
+
+#order_product_id {
+  font-size: 12px;
+}
+
+/*Submit Buttons*/
+input[type=submit] {
+    width: 100px;
+    font-size: 150px;
+}
+
+label {
+  font-size: 20px;
+}
+
+input#store_name, input#store_img_url, input#store_location {
+  height: 22px;
+  font-size: 15px;
+}

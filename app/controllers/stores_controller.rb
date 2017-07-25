@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
 
 # authenticate user except "index" and "show" pages
-# before_action :authenticate_user!, except: [:index, :show]
+before_action :authenticate_user!, except: [:index, :show]
 
 before_action :set_session
 # tracking history

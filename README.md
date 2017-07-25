@@ -1,5 +1,5 @@
 
-The project was built in HTML5, CSS and Rails.
+The project was built in HTML5, CSS and Ruby on Rails.
 
 I started with two models as "Store" and "Product" and associated them with one to many relationship so that Store has many products and products belongs to Store. Created controllers and views for them. Then I created third model "User" with Devise. I wanted to have an association between user and product in order to user to select from products and create an order. So I created "Order" model as join table to create many to many relationship between user and product so User can order whichever Product they want to order.
 

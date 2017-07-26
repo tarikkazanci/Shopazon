@@ -1,7 +1,6 @@
+Shopazon is a shopping application built in HTML5, CSS and Ruby on Rails. In Shopazon you can see awesome products and their stores. You can make an order by selecting from all the products and after creating order you can view your orders. You can also look at your profile informations if you sign up to the application. 
 
-The project was built in HTML5, CSS and Ruby on Rails.
-
-I started with two models as "Store" and "Product" and associated them with one to many relationship so that Store has many products and products belongs to Store. Created controllers and views for them. Then I created third model "User" with Devise. I wanted to have an association between user and product in order to user to select from products and create an order. So I created "Order" model as join table to create many to many relationship between user and product so User can order whichever Product they want to order.
+I started with two models as "Store" and "Product" and associated them with one to many relationship so that Store has many products and products belongs to Store. Then I created third model "User" with Devise. I wanted to have an association between user and product in order to user to select from products and create an order. So I created "Order" model as join table to create many to many relationship between user and product so user can order whichever product they want to order.
 
 
 User Stories
